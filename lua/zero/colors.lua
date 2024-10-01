@@ -3,7 +3,6 @@ local M = {}
 -- Default configuration
 M.config = {
 	transparent = false,
-	glow = false,
 	show_end_of_buffer = true,
 
 	colors = {
@@ -101,16 +100,6 @@ function M.setup(user_config)
 		DiagnosticUnderlineInfo = { gui = "underline", sp = colors.info },
 	}
 
-	-- Function to apply glow effect
-	local function apply_glow(group_name, config)
-		if M.config.glow then
-			vim.cmd("highlight " .. group_name .. " guifg=" .. config.fg .. " gui=bold guisp=" .. colors.operator)
-		end
-		if config.bg then
-			vim.cmd("highlight " .. group_name .. " guibg=" .. config.bg)
-		end
-	end
-
 	-- Apply highlight groups
 	for group_name, config in pairs(highlight_groups) do
 		local cmd = "highlight " .. group_name
@@ -127,19 +116,6 @@ function M.setup(user_config)
 			cmd = cmd .. " guisp=" .. config.sp
 		end
 		vim.cmd(cmd)
-
-		-- Apply glow effect to important groups
-		if
-			M.config.glow
-			and (
-				group_name == "Function"
-				or group_name == "Keyword"
-				or group_name == "Identifier"
-				or group_name == "Operator"
-			)
-		then
-			apply_glow(group_name, config)
-		end
 	end
 
 	-- Apply plugin specific highlight groups

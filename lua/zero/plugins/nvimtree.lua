@@ -1,7 +1,7 @@
 local M = {}
 
 M.setup = function()
-	local colors = require("darkvoid.colors").config.colors
+	local colors = require("zero.colors").config.colors
 
 	local highlight_groups = {
 		NvimTreeFolderIcon = { fg = colors.identifier, bg = "NONE" },

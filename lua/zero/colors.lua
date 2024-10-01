@@ -7,49 +7,43 @@ M.config = {
 	show_end_of_buffer = true,
 
 	colors = {
-		fg = "#c0c0c0",
-		bg = "#1c1c1c",
-		cursor = "#bdfe58",
-		line_nr = "#404040",
-		visual = "#303030",
-		comment = "#585858",
-		string = "#d1d1d1",
-		func = "#e1e1e1",
-		kw = "#f1f1f1",
-		identifier = "#b1b1b1",
-		type = "#a1a1a1",
-		search_highlight = "#1bfd9c",
-		operator = "#1bfd9c",
-		bracket = "#e6e6e6",
-		preprocessor = "#4b8902",
-		bool = "#66b2b2",
-		constant = "#b2d8d8",
-
+		fg = "#c0c0c0", -- Light grey for main text
+		bg = "#0a0a0a", -- Very dark grey, almost black for background
+		cursor = "#c0c0c0", -- Light grey for cursor
+		line_nr = "#404040", -- Dark grey for line numbers
+		visual = "#1c1c1c", -- Slightly lighter than bg for visual selection
+		comment = "#585858", -- Medium grey for comments
+		string = "#c0c0c0", -- Light grey for strings
+		func = "#c0c0c0", -- Light grey for functions
+		kw = "#c0c0c0", -- Light grey for keywords
+		identifier = "#c0c0c0", -- Light grey for identifiers
+		type = "#c0c0c0", -- Light grey for types
+		search_highlight = "#404040", -- Dark grey for search highlights
+		operator = "#c0c0c0", -- Light grey for operators
+		bracket = "#c0c0c0", -- Light grey for brackets
+		preprocessor = "#585858", -- Medium grey for preprocessor
+		bool = "#c0c0c0", -- Light grey for booleans
+		constant = "#c0c0c0", -- Light grey for constants
 		-- gitsigns colors
-		added = "#baffc9",
-		changed = "#ffffba",
-		removed = "#ffb3ba",
-
+		added = "#585858", -- Medium grey for added
+		changed = "#585858", -- Medium grey for changed
+		removed = "#585858", -- Medium grey for removed
 		-- Pmenu colors
-		pmenu_bg = "#1c1c1c",
-		pmenu_sel_bg = "#1bfd9c",
-		pmenu_fg = "#c0c0c0",
-
-		-- EndOfBuffer color
-		eob = "#3c3c3c",
-
-		-- Telescope specific colors
-		border = "#585858",
-		title = "#bdfe58",
-
+		pmenu_bg = "#0a0a0a", -- Very dark grey for popup menu background
+		pmenu_sel_bg = "#1c1c1c", -- Slightly lighter for selected item
+		pmenu_fg = "#c0c0c0", -- Light grey for popup menu text
+		-- endofbuffer color
+		eob = "#0a0a0a", -- Very dark grey, same as bg
+		-- telescope specific colors
+		border = "#404040", -- Dark grey for borders
+		title = "#c0c0c0", -- Light grey for titles
 		-- bufferline specific colors
-		bufferline_selection = "#1bfd9c",
-
-		-- LSP diagnostics colors
-		error = "#dea6a0",
-		warning = "#d6efd8",
-		hint = "#bedc74",
-		info = "#7fa1c3",
+		bufferline_selection = "#1c1c1c", -- Slightly lighter than bg for selection
+		-- lsp diagnostics colors
+		error = "#585858", -- Medium grey for errors
+		warning = "#585858", -- Medium grey for warnings
+		hint = "#585858", -- Medium grey for hints
+		info = "#585858", -- Medium grey for info
 	},
 }
 
@@ -149,7 +143,7 @@ function M.setup(user_config)
 	end
 
 	-- Apply plugin specific highlight groups
-	require("darkvoid.config").setup(M.config)
+	require("zero.config").setup(M.config)
 end
 
 return M

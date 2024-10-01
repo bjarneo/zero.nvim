@@ -13,7 +13,7 @@ local function load_plugins(colors, config)
 	}
 
 	for _, plugin in ipairs(plugins) do
-		local ok, plugin_config = pcall(require, "darkvoid.plugins." .. plugin)
+		local ok, plugin_config = pcall(require, "zero.plugins." .. plugin)
 		if ok then
 			plugin_config.setup(colors, config)
 		else
@@ -25,8 +25,8 @@ end
 -- Apply colorscheme
 function M.setup(user_config)
 	-- Load the colors and config from colors.lua
-	local colors = require("darkvoid.colors").config.colors
-	local config = require("darkvoid.colors").config
+	local colors = require("zero.colors").config.colors
+	local config = require("zero.colors").config
 
 	-- Merge user configuration with default (optional)
 	config = vim.tbl_deep_extend("force", config, user_config or {})

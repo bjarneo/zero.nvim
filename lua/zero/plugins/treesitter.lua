@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup()
-	local colors = require("darkvoid.colors").config.colors
+	local colors = require("zero.colors").config.colors
 
 	local highlight_groups = {
 		-- Functions
